@@ -111,6 +111,18 @@ class MyTestCase(unittest.TestCase):
         p2.player_ship_placing('v', 3, 'A')
         assert True == p1.player_shots_fired(p2.board, '3', 'A')
         assert False == p2.player_shots_fired(p1.board, '3', 'G')
+        
+    # testing player shot fired on other player's board logic for sinking
+    def test_palyer_shot_fired2(self):
+
+        p1 = Player('Test Player 1')
+        p1.player_ship_placing('h', 3, 'A')
+        p2 = Player('Test Player 2')
+        p2.player_ship_placing('v', 3, 'A')
+        p1.player_shots_fired(p2.board, '3', 'A')
+        p1.player_shots_fired(p2.board, '4', 'A')
+        p1.player_shots_fired(p2.board, '5', 'A')
+        assert True == p1.is_sink()
 
 if __name__ == '__main__':
     unittest.main()
