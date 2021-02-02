@@ -28,10 +28,13 @@ class Player:
             # checks if sink condition is true
             if self.is_sink():
                 print("Ship is Sinked..!")
+                return True
             else:
                 print("Ship is Hit..!")
+            return True
         else:
             print("Ship is Missed..!")
+            return False
 
     # method to check if counter value is 3 for sink condition
     def is_sink(self):

@@ -102,15 +102,15 @@ class MyTestCase(unittest.TestCase):
         p1 = Player('Test Player 1')
         assert False == p1.player_ship_placing('v', 8, 'A')
 
-    # testing player shot fired on other player's board logicmore tes
+    # testing player shot fired on other player's board logic
     def test_palyer_shot_fired1(self):
+
         p1 = Player('Test Player 1')
         p1.player_ship_placing('h', 3, 'A')
         p2 = Player('Test Player 2')
         p2.player_ship_placing('v', 3, 'A')
-        assert True == p1.player_shots_fired(p2.board, 3, 'A')
-        assert False == p1.player_shots_fired(p2.board, 3, 'G')
-
+        assert True == p1.player_shots_fired(p2.board, '3', 'A')
+        assert False == p2.player_shots_fired(p1.board, '3', 'G')
 
 if __name__ == '__main__':
     unittest.main()
