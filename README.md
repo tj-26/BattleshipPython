@@ -1,7 +1,8 @@
 # BattleshipPython
 
 The project is based on Python 3.9
-This is a battleship game developed in python using python unit testing and automated build deployment tool circleCI.
+
+This is a battleship game developed in python using python unit testing and automated build deployment tool CircleCI.
 
 The project is test driven. and uses OOP concepts for development.
 
