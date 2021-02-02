@@ -3,7 +3,7 @@
 The project is based on Python 3.9
 This is a battleship game developed in python using python unit testing and automated build deployment tool circleCI.
 The project is test driven. and uses OOP concepts for development.
-The test cases provide almost 90% code coverage.
+The test cases provide almost 95% code coverage.
 
 Using python coverage for reports on unit test cases.
 - pip install coverage
