@@ -86,6 +86,30 @@ class MyTestCase(unittest.TestCase):
         assert True == board.input_validation(1, 'B')
         assert False == board.input_validation(1, 'X')
 
+    # test for player object and his own game board
+    def test_player_object(self):
+        p1 = Player('Test Player 1')
+        assert p1.name == 'Test Player 1'
+        assert len(p1.board.print_board()) == 8
+        assert p1.counter == 0
+
+    # testing the player ship placing logic
+    def test_palyer_ship_place1(self):
+        p1 = Player('Test Player 1')
+        assert True == p1.player_ship_placing('h', 2, 'A')
+
+    def test_palyer_ship_place2(self):
+        p1 = Player('Test Player 1')
+        assert False == p1.player_ship_placing('v', 8, 'A')
+
+    # testing player shot fired on other player's board logicmore tes
+    def test_palyer_shot_fired1(self):
+        p1 = Player('Test Player 1')
+        p1.player_ship_placing('h', 3, 'A')
+        p2 = Player('Test Player 2')
+        p2.player_ship_placing('v', 3, 'A')
+        assert True == p1.player_shots_fired(p2.board, 3, 'A')
+        assert False == p1.player_shots_fired(p2.board, 3, 'G')
 
 
 if __name__ == '__main__':
