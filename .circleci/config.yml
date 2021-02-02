@@ -21,4 +21,6 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest -v --cov
+            pip install coverage
+            coverage run test_gameboard.py
+            coverage report -m
