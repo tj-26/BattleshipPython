@@ -2,12 +2,6 @@ from gameboard import Board
 from gameplayer import Player
 import unittest
 
-
-def test_ship_placed2():
-    board = Board(8)
-    assert False == board.ship_place('K', 1, 'D')
-
-
 class MyTestCase(unittest.TestCase):
 
     # test the grid board length
@@ -29,6 +23,10 @@ class MyTestCase(unittest.TestCase):
     def test_ship_placed(self):
         board = Board(8)
         assert True == board.ship_place('h', 1, 'A')
+        
+    def test_ship_placed2():
+        board = Board(8)
+        assert False == board.ship_place('K', 1, 'D')
 
     # testing validations put for testing method function
     def test_ship_placed3(self):
